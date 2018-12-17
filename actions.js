@@ -14,12 +14,12 @@ function addComment(text) {
       text,
       id: uuid.v4()
     }
-  };
+};
 
-  const boundAddComment = text => dispatch(addComment(text));
+const boundAddComment = text => dispatch(addComment(text));
 
-boundAddComment('nowy komentarz!');
-boundAddComment('kolejny nowy komentarz!');
+boundAddComment('new text!'); //for example
+boundAddComment('next text');
 
 
 // 2. Remove comment
@@ -31,9 +31,9 @@ function removeComment(id) {
     }
 };
 
-  const boundRemoveComment = id => dispatch(removeComment(id));
+const boundRemoveComment = id => dispatch(removeComment(id));
   
-  boundRemoveComment(5); //for example
+boundRemoveComment(5); //for example
 
 
   // 3. Edit comment
@@ -46,9 +46,9 @@ function editComment(id) {
     }
 };
 
-const boundEditComment = (text, id) => dispatch(editComment(text, id));
+const boundEditComment = (id, text) => dispatch(editComment(id, text));
 
-boundEditComment(10, 'text add to comment');
+boundEditComment(10, 'text added to comment'); //for example
 
 
 // 4. Thumb up comment
@@ -63,7 +63,7 @@ function thumbUpComment(value, id) {
 
 const boundThumbUpComment = (value, id) => dispatch(thumbUpComment(value, id));
 
-boundThumbUpComment(+1);
+boundThumbUpComment(+1); //for example
 
 
 // 5. Thumb down comment
@@ -76,6 +76,6 @@ function thumbDownComment(value, id) {
     }
 };
 
-const boundThumbDownComment = value => disptach(thumbDownComment(like, id));
+const boundThumbDownComment = (value, id) => disptach(thumbDownComment(value, id));
 
-boundThumbDownComment(-1);
+boundThumbDownComment(-1); //for example
